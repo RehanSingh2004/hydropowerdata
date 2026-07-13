@@ -1,0 +1,16 @@
+# SQLite database (regenerated automatically on first run)
+*.db
+*.sqlite
+
+# PHP error logs
+*.log
+php_errors.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
