@@ -1,7 +1,13 @@
 <?php
 // db.php - Database connection and initialization using SQLite
 
-$dbPath = __DIR__ . '/powerpulse.db';
+$dbPath = getenv('POWERPULSE_DB_PATH');
+if (!$dbPath) {
+    $defaultPath = __DIR__ . '/powerpulse.db';
+    $tmpPath = sys_get_temp_dir() . '/powerpulse.db';
+    $dbPath = is_writable(dirname($defaultPath)) ? $defaultPath : $tmpPath;
+}
+
 $dbExists = file_exists($dbPath);
 
 try {
