@@ -109,6 +109,12 @@ php -S localhost:8000
 
 ✅ **The database will initialize automatically on first page load.**
 
+### Deployment
+
+Vercel does not provide a maintained PHP runtime, so this application cannot be deployed there with `@vercel/php`. Deploy the included `Dockerfile` on a container host such as Render, Railway, Fly.io, or any VPS with Docker. The app listens on Apache's port 80 and initializes SQLite automatically.
+
+For production use, set `POWERPULSE_DB_PATH` to a persistent mounted volume. Without persistent storage, the SQLite database is reset when the container is replaced.
+
 ---
 
 ## ⚙️ Physics Simulation Engine
