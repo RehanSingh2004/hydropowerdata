@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: hydropowerdata
+    runtime: docker
+    plan: starter
+    healthCheckPath: /
+    envVars:
+      - key: POWERPULSE_DB_PATH
+        value: /var/lib/powerpulse/powerpulse.db
+    disk:
+      name: powerpulse-data
+      mountPath: /var/lib/powerpulse
+      sizeGB: 1

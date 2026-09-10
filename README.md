@@ -111,7 +111,7 @@ php -S localhost:8000
 
 ### Deployment
 
-Vercel does not provide a maintained PHP runtime, so this application cannot be deployed there with `@vercel/php`. Deploy the included `Dockerfile` on a container host such as Render, Railway, Fly.io, or any VPS with Docker. The app listens on Apache's port 80 and initializes SQLite automatically.
+Vercel does not provide a maintained PHP runtime, so this application cannot be deployed there with `@vercel/php`. A Render Blueprint is included in `render.yaml`; create a Render Blueprint from this GitHub repository to deploy the Docker image with persistent SQLite storage. The app listens on Apache's port 80 and initializes SQLite automatically.
 
 For production use, set `POWERPULSE_DB_PATH` to a persistent mounted volume. Without persistent storage, the SQLite database is reset when the container is replaced.
 
